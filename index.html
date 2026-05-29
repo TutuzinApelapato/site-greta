@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Greta · ArtGrill — Equipamentos para Espaço Gourmet | Atendimento Pessoal</title>
+<meta name="description" content="Fale direto com a Greta, especialista da ArtGrill em churrasqueiras a gás, coifas, grills de embutir, fornos de pizza, cooktops, adegas e cervejeiras. Orçamento sem compromisso e projeto personalizado para sua área gourmet." />
+<meta name="theme-color" content="#0c0c0e" />
+<meta name="author" content="Greta · ArtGrill" />
+<meta property="og:title" content="Greta · ArtGrill — Transforme sua área gourmet com quem entende" />
+<meta property="og:description" content="Atendimento pessoal e orçamento sem compromisso. Churrasqueiras a gás, coifas, grills, fornos de pizza, adegas e cervejeiras." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="https://artgrill.com.br/images/logo.png" />
+<style>
+  :root{
+    --bg:#0c0c0e;
+    --bg-2:#121215;
+    --panel:#17171b;
+    --panel-2:#1d1d22;
+    --line:rgba(255,255,255,.08);
+    --line-strong:rgba(255,255,255,.14);
+    --ink:#f1efea;
+    --ink-soft:#b8b5ad;
+    --ink-mute:#7d7a73;
+    --gold:#c9a24b;
+    --gold-soft:#e2c474;
+    --gold-deep:#a07e30;
+    --radius:14px;
+    --maxw:1180px;
+    --serif:Georgia,"Times New Roman",serif;
+    --sans:"Helvetica Neue",Helvetica,Arial,system-ui,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--sans);
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  section{position:relative}
+
+  .eyebrow{
+    font-size:12px;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--gold);font-weight:700;
+  }
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.12;letter-spacing:-.01em}
+  .muted{color:var(--ink-soft)}
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;gap:9px;
+    padding:15px 26px;border-radius:999px;font-size:15px;font-weight:700;
+    letter-spacing:.01em;cursor:pointer;border:1px solid transparent;
+    transition:transform .18s ease, box-shadow .25s ease, background .25s ease;
+    font-family:var(--sans);white-space:nowrap;
+  }
+  .btn-gold{
+    background:linear-gradient(135deg,var(--gold-soft),var(--gold) 55%,var(--gold-deep));
+    color:#1a1305;box-shadow:0 8px 28px rgba(201,162,75,.32);
+  }
+  .btn-gold:hover{transform:translateY(-2px);box-shadow:0 14px 38px rgba(201,162,75,.45)}
+  .btn-ghost{background:transparent;border-color:var(--line-strong);color:var(--ink)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft);transform:translateY(-2px)}
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position:sticky;top:0;z-index:60;
+    background:rgba(10,10,12,.82);backdrop-filter:blur(14px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;height:70px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand img{height:34px;width:auto;filter:brightness(0) invert(1)}
+  .brand .sub{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .topcta{display:flex;align-items:center;gap:10px}
+  .topcta .who{font-size:13px;color:var(--ink-soft);display:none}
+  .topcta .who b{color:var(--ink)}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 80% -10%, rgba(201,162,75,.16), transparent 55%),
+      radial-gradient(90% 70% at 0% 110%, rgba(201,162,75,.07), transparent 60%),
+      linear-gradient(180deg,#0e0e11,#0a0a0c);
+  }
+  .hero .wrap{padding-top:74px;padding-bottom:84px}
+  .greta-flag{
+    display:inline-flex;align-items:center;gap:10px;
+    background:var(--panel);border:1px solid var(--line-strong);
+    padding:8px 8px 8px 8px;border-radius:999px;margin-bottom:26px;
+  }
+  .greta-flag .dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.18);margin-left:8px}
+  .greta-flag span{font-size:13px;color:var(--ink-soft);padding-right:6px}
+  .greta-flag span b{color:var(--gold-soft)}
+  .hero h1{font-size:clamp(40px,8vw,76px);margin-bottom:22px;max-width:14ch}
+  .hero h1 em{font-style:italic;color:var(--gold-soft)}
+  .hero p.lead{font-size:clamp(17px,2.4vw,20px);color:var(--ink-soft);max-width:54ch;margin-bottom:34px}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+  .hero-trust{display:flex;flex-wrap:wrap;gap:26px;margin-top:46px;padding-top:30px;border-top:1px solid var(--line)}
+  .hero-trust div{display:flex;flex-direction:column}
+  .hero-trust b{font-family:var(--serif);font-size:30px;color:var(--gold-soft)}
+  .hero-trust small{font-size:12.5px;letter-spacing:.04em;color:var(--ink-mute);text-transform:uppercase}
+
+  /* ---------- section heading ---------- */
+  .sec{padding:88px 0}
+  .sec-head{max-width:62ch;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(30px,5vw,46px);margin:14px 0 14px}
+  .sec-head p{color:var(--ink-soft);font-size:17px}
+
+  /* ---------- products ---------- */
+  .grid{display:grid;gap:18px}
+  .products .grid{grid-template-columns:repeat(2,1fr)}
+  .pcard{
+    background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);
+    overflow:hidden;display:flex;flex-direction:column;
+    transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+  }
+  .pcard:hover{transform:translateY(-4px);border-color:var(--gold);box-shadow:0 18px 50px rgba(0,0,0,.5)}
+  .pcard .ph{
+    aspect-ratio:1/1;background:
+      linear-gradient(135deg,#1c1c22,#141418);
+    display:flex;align-items:center;justify-content:center;overflow:hidden;position:relative;
+  }
+  .pcard .ph img{width:100%;height:100%;object-fit:contain;padding:16px;background:radial-gradient(circle at 50% 40%,#202028,#141418)}
+  .pcard .pb{padding:18px 18px 22px}
+  .pcard h3{font-size:20px;margin-bottom:6px}
+  .pcard p{font-size:13.5px;color:var(--ink-mute)}
+  .pcard .tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+  /* ---------- projects gallery ---------- */
+  .projects{background:linear-gradient(180deg,#0a0a0c,#0e0e11)}
+  .gal{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+  .gal a{
+    position:relative;border-radius:var(--radius);overflow:hidden;display:block;
+    aspect-ratio:1/1;background:linear-gradient(135deg,#1a1a20,#101014);border:1px solid var(--line);
+  }
+  .gal img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease;filter:saturate(.92)}
+  .gal a:hover img{transform:scale(1.07)}
+  .gal a::after{
+    content:attr(data-label);position:absolute;left:0;right:0;bottom:0;
+    padding:30px 16px 14px;font-size:13px;font-weight:600;color:#fff;
+    background:linear-gradient(transparent,rgba(0,0,0,.78));
+    opacity:0;transition:opacity .3s ease;
+  }
+  .gal a:hover::after{opacity:1}
+
+  /* ---------- testimonials ---------- */
+  .testi .grid{grid-template-columns:repeat(3,1fr)}
+  .tcard{
+    background:linear-gradient(180deg,var(--panel-2),var(--panel));
+    border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;
+    display:flex;flex-direction:column;gap:18px;
+  }
+  .tcard .quote-mark{font-family:var(--serif);font-size:54px;line-height:.5;color:var(--gold);height:24px}
+  .tcard p{font-size:16px;color:var(--ink);font-style:italic}
+  .stars{color:var(--gold-soft);letter-spacing:3px;font-size:14px}
+  .tcard .who{display:flex;align-items:center;gap:12px;margin-top:auto;padding-top:8px;border-top:1px solid var(--line)}
+  .tcard .av{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep));display:flex;align-items:center;justify-content:center;color:#1a1305;font-weight:700;font-family:var(--serif);font-size:18px}
+  .tcard .who b{font-size:15px}
+  .tcard .who small{display:block;font-size:12px;color:var(--ink-mute)}
+
+  /* ---------- contact ---------- */
+  .contact{background:
+    radial-gradient(90% 80% at 90% 0%,rgba(201,162,75,.12),transparent 55%),
+    linear-gradient(180deg,#0e0e11,#0a0a0c);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:start}
+  .contact h2{font-size:clamp(30px,5vw,46px);margin:14px 0 18px}
+  .contact .lead{color:var(--ink-soft);font-size:17px;margin-bottom:30px;max-width:46ch}
+  .contact-methods{display:flex;flex-direction:column;gap:12px}
+  .cm{
+    display:flex;align-items:center;gap:16px;padding:16px 18px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;
+    transition:border-color .2s ease,transform .2s ease;
+  }
+  .cm:hover{border-color:var(--gold);transform:translateX(4px)}
+  .cm .ic{width:44px;height:44px;flex:none;border-radius:50%;border:1px solid var(--line-strong);display:flex;align-items:center;justify-content:center}
+  .cm .ic svg{width:22px;height:22px}
+  .cm small{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-mute)}
+  .cm b{font-size:17px;color:var(--ink)}
+
+  form{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px}
+  form h3{font-size:23px;margin-bottom:6px}
+  form .fhint{font-size:13.5px;color:var(--ink-mute);margin-bottom:22px}
+  .field{margin-bottom:16px}
+  .field label{display:block;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:7px}
+  .field input,.field select{
+    width:100%;padding:14px 15px;border-radius:10px;border:1px solid var(--line-strong);
+    background:var(--bg-2);color:var(--ink);font-size:15px;font-family:var(--sans);
+  }
+  .field input:focus,.field select:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,162,75,.16)}
+  .field select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--gold) 50%),linear-gradient(135deg,var(--gold) 50%,transparent 50%);background-position:calc(100% - 20px) center,calc(100% - 15px) center;background-size:5px 5px,5px 5px;background-repeat:no-repeat}
+  form .btn-gold{width:100%;justify-content:center;margin-top:8px}
+  form .priv{font-size:12px;color:var(--ink-mute);text-align:center;margin-top:14px}
+
+  /* ---------- footer ---------- */
+  footer{background:#08080a;border-top:1px solid var(--line);padding:54px 0 40px}
+  .foot-grid{display:flex;flex-wrap:wrap;gap:30px;justify-content:space-between;align-items:flex-start}
+  footer .brand img{height:30px}
+  footer p{font-size:13.5px;color:var(--ink-mute);max-width:40ch;margin-top:14px}
+  .foot-links{display:flex;flex-direction:column;gap:9px}
+  .foot-links a{font-size:14px;color:var(--ink-soft)}
+  .foot-links a:hover{color:var(--gold-soft)}
+  .foot-bottom{margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-mute);display:flex;flex-wrap:wrap;gap:8px;justify-content:space-between}
+
+  /* ---------- floating buttons ---------- */
+  .float{position:fixed;right:18px;bottom:18px;z-index:80;display:flex;flex-direction:column;gap:12px}
+  .fab{
+    width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.4);cursor:pointer;border:none;
+    transition:transform .2s ease;position:relative;
+  }
+  .fab:hover{transform:scale(1.07)}
+  .fab svg{width:30px;height:30px}
+  .fab-wa{background:#25d366}
+  .fab-call{background:linear-gradient(135deg,var(--gold-soft),var(--gold-deep))}
+  .fab-wa::before{
+    content:"";position:absolute;inset:0;border-radius:50%;
+    box-shadow:0 0 0 0 rgba(37,211,102,.5);animation:pulse 2.4s infinite;
+  }
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 0 0 16px rgba(37,211,102,0)}100%{box-shadow:0 0 0 0 rgba(37,211,102,0)}}
+
+  /* ---------- responsive ---------- */
+  @media(min-width:720px){
+    .topcta .who{display:block}
+    .products .grid{grid-template-columns:repeat(3,1fr)}
+    .gal{grid-template-columns:repeat(3,1fr)}
+  }
+  @media(max-width:860px){
+    .testi .grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr;gap:34px}
+  }
+  @media(max-width:520px){
+    .sec{padding:64px 0}
+    .hero .wrap{padding-bottom:64px}
+    .topcta .btn{padding:12px 18px;font-size:14px}
+    .brand .sub{display:none}
+    .fab{width:54px;height:54px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#topo">
+      <img src="https://artgrill.com.br/images/logo.png" alt="ArtGrill" onerror="this.style.display='none'" />
+      <span class="sub">· Greta</span>
+    </a>
+    <div class="topcta">
+      <span class="who">Atendimento direto com <b>Greta</b></span>
+      <a class="btn btn-gold" href="https://api.whatsapp.com/send?phone=5511998581773&text=Ol%C3%A1%20Greta!%20Vim%20pela%20p%C3%A1gina%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener">Falar com a Greta</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="topo">
+  <div class="wrap">
+    <div class="greta-flag">
+      <span class="dot"></span>
+      <span>Fale <b>direto com a Greta</b> — sem intermediários, sem robôs</span>
+    </div>
+    <h1>Transforme sua área gourmet com <em>quem entende</em></h1>
+    <p class="lead">Especialista da ArtGrill em churrasqueiras a gás, coifas, grills de embutir, fornos de pizza, cooktops, adegas e cervejeiras. Atendimento pessoal do primeiro contato à instalação — e orçamento sem compromisso.</p>
+    <div class="hero-actions">
+      <a class="btn btn-gold" href="https://api.whatsapp.com/send?phone=5511998581773&text=Ol%C3%A1%20Greta!%20Quero%20um%20or%C3%A7amento%20para%20minha%20%C3%A1rea%20gourmet." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.2.6 1 1.4 1.7 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+        Pedir orçamento no WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="tel:+5511998581773">Ligar: (11) 99858-1773</a>
+    </div>
+    <div class="hero-trust">
+      <div><b>+20</b><small>Categorias de produtos</small></div>
+      <div><b>1:1</b><small>Atendimento pessoal</small></div>
+      <div><b>Alphaville</b><small>e Grande SP</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRODUTOS POPULARES ===== -->
+<section class="sec products" id="produtos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Produtos populares</div>
+      <h2>Equipamentos de alto padrão para o seu espaço gourmet</h2>
+      <p>Uma curadoria das linhas mais procuradas. Não achou o que procura? A Greta encontra o modelo ideal para o seu projeto.</p>
+    </div>
+    <div class="grid" id="prodGrid"></div>
+  </div>
+</section>
+
+<!-- ===== PROJETOS ===== -->
+<section class="sec projects" id="projetos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Projetos</div>
+      <h2>Áreas gourmet que viraram o lugar favorito da casa</h2>
+      <p>Da churrasqueira embutida ao espaço gourmet completo — projetos reais entregues no prazo combinado.</p>
+    </div>
+    <div class="gal" id="galGrid"></div>
+  </div>
+</section>
+
+<!-- ===== DEPOIMENTOS ===== -->
+<section class="sec testi" id="depoimentos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Clientes felizes</div>
+      <h2>Quem comprou, recomenda</h2>
+      <p>Depoimentos reais de clientes ArtGrill.</p>
+    </div>
+    <div class="grid">
+      <div class="tcard">
+        <div class="quote-mark">&ldquo;</div>
+        <p>Empresa espetacular, profissionais competentes e comprometidos. Recomendo!</p>
+        <div class="stars">★★★★★</div>
+        <div class="who"><div class="av">G</div><div><b>Gustavo Sagio</b><small>Cliente ArtGrill</small></div></div>
+      </div>
+      <div class="tcard">
+        <div class="quote-mark">&ldquo;</div>
+        <p>Ótimo atendimento, adorei a equipe, super simpática e atenciosa. Recomendo!!</p>
+        <div class="stars">★★★★★</div>
+        <div class="who"><div class="av">L</div><div><b>Luciana das Neves Souza</b><small>Cliente ArtGrill</small></div></div>
+      </div>
+      <div class="tcard">
+        <div class="quote-mark">&ldquo;</div>
+        <p>Adorei minha compra. Desde a venda foram super atenciosos, e a instalação foi impecável. Finalizou a obra como combinado, no tempo correto, sem nenhuma intercorrência. Recomendo e voltarei a comprar.</p>
+        <div class="stars">★★★★★</div>
+        <div class="who"><div class="av">L</div><div><b>Luana Nogueira</b><small>Cliente ArtGrill</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTATO ===== -->
+<section class="sec contact" id="contato">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Contato</div>
+        <h2>Fale direto com a Greta</h2>
+        <p class="lead">Me conta o que você imagina para a sua área gourmet. Eu cuido de tudo pessoalmente — da escolha dos equipamentos ao orçamento, sem compromisso.</p>
+        <div class="contact-methods">
+          <a class="cm" href="https://api.whatsapp.com/send?phone=5511998581773&text=Ol%C3%A1%20Greta!%20Vim%20pela%20p%C3%A1gina." target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="#25d366"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.2.6 1 1.4 1.7 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg></span>
+            <div><small>WhatsApp</small><b>(11) 99858-1773</b></div>
+          </a>
+          <a class="cm" href="tel:+5511998581773">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+            <div><small>Ligação direta</small><b>(11) 99858-1773</b></div>
+          </a>
+        </div>
+      </div>
+
+      <form id="orcamento" onsubmit="return enviarOrcamento(event)">
+        <h3>Orçamento rápido</h3>
+        <p class="fhint">Preencha em 30 segundos. Eu respondo pessoalmente pelo WhatsApp.</p>
+        <div class="field">
+          <label for="nome">Seu nome</label>
+          <input id="nome" name="nome" type="text" placeholder="Como posso te chamar?" required />
+        </div>
+        <div class="field">
+          <label for="tel">Telefone / WhatsApp</label>
+          <input id="tel" name="tel" type="tel" placeholder="(11) 9 9999-9999" required />
+        </div>
+        <div class="field">
+          <label for="tipo">Tipo de produto</label>
+          <select id="tipo" name="tipo">
+            <option>Churrasqueira a gás</option>
+            <option>Grill de embutir</option>
+            <option>Coifa</option>
+            <option>Forno de pizza</option>
+            <option>Cooktop</option>
+            <option>Adega</option>
+            <option>Cervejeira</option>
+            <option>Lareira</option>
+            <option>Projeto completo de espaço gourmet</option>
+            <option>Outro / não sei ainda</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-gold">Enviar para a Greta</button>
+        <p class="priv">Sem spam. Orçamento sem compromisso.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#topo"><img src="https://artgrill.com.br/images/logo.png" alt="ArtGrill" style="filter:brightness(0) invert(1)" onerror="this.style.display='none'" /></a>
+        <p>Equipamentos para espaço gourmet de alto padrão. Atendimento pessoal com a Greta, da escolha à instalação.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#produtos">Produtos</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#depoimentos">Depoimentos</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="foot-links">
+        <a href="https://api.whatsapp.com/send?phone=5511998581773" target="_blank" rel="noopener">WhatsApp (11) 99858-1773</a>
+        <a href="tel:+5511998581773">Ligar agora</a>
+        <a href="https://www.instagram.com/artgrill/" target="_blank" rel="noopener">Instagram @artgrill</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 ArtGrill · Atendimento Greta. Todos os direitos reservados.</span>
+      <span>gretagourmet.com.br</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING BUTTONS ===== -->
+<div class="float">
+  <a class="fab fab-wa" href="https://api.whatsapp.com/send?phone=5511998581773&text=Ol%C3%A1%20Greta!%20Vim%20pela%20p%C3%A1gina%20e%20gostaria%20de%20um%20or%C3%A7amento." target="_blank" rel="noopener" aria-label="WhatsApp da Greta">
+    <svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.4-.5.1-1.1.1-1.8-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.5-1.2-2.9 0-1.4.7-2 1-2.3.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 1.9c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.1.2.6 1 1.4 1.7 1 .8 1.7 1.1 2 1.2.2.1.4.1.5-.1l.7-.8c.2-.2.3-.2.6-.1l1.8.9c.3.1.5.2.5.3.1.2.1.7-.1 1.4Z"/></svg>
+  </a>
+  <a class="fab fab-call" href="tel:+5511998581773" aria-label="Ligar para a Greta">
+    <svg viewBox="0 0 24 24" fill="none" stroke="#1a1305" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg>
+  </a>
+</div>
+
+<script>
+  // ---- Fallback robusto: troca por placeholder se a imagem falhar OU travar ----
+  function guardImage(img, onFail, ms){
+    var done = false;
+    function fail(){ if(done) return; done = true; onFail(); }
+    function ok(){ done = true; }
+    if(img.complete && img.naturalWidth > 0){ ok(); return; }
+    img.addEventListener('load', ok);
+    img.addEventListener('error', fail);
+    // Timeout só para URLs remotas (podem travar sem disparar erro).
+    // Imagens locais (assets/) são confiáveis: confiamos só no evento de erro.
+    var remote = /^https?:\/\//i.test(img.getAttribute('src') || '');
+    if(remote){
+      setTimeout(function(){
+        if(!done && img.naturalWidth === 0) fail();
+      }, ms || 2500);
+    }
+  }
+
+  // ---- Produtos populares (imagens reais do catálogo ArtGrill) ----
+  var produtos = [
+    {tag:"Churrasqueira a gás", h:"Linha Classic sem fumaça", p:"Assa por igual, sem brasa e sem fumaça invadindo a casa.", img:"assets/prod-churrasqueira-classic.png", fit:"cover"},
+    {tag:"Adega & Cervejeira", h:"Dual Wine & Beer Center", p:"Vinhos e cervejas na temperatura certa, com design embutido.", img:"assets/prod-dual-wine-beer.png", fit:"cover"},
+    {tag:"Refrigeração", h:"Refrigerador Multidoor Titânio", p:"472L de sofisticação para a sua cozinha gourmet.", img:"assets/prod-refrigerador.png", fit:"cover"},
+    {tag:"Grill de embutir", h:"Grill Prime a Gás Home Pro +", p:"Estilo cooktop, embute na bancada e eleva o churrasco.", img:"assets/prod-grill-prime.png", fit:"cover"},
+    {tag:"Coifas", h:"Coifa de Vidro Curvo", p:"Exaustão potente e silenciosa, com acabamento premium.", img:"assets/prod-coifa.png", fit:"cover"},
+    {tag:"Fornos", h:"Forno de Pizza Invita", p:"Pizza de pizzaria em casa — calor uniforme e rápido.", img:"assets/prod-forno-pizza.png", fit:"cover"}
+  ];
+  function prodPlaceholder(ph){
+    ph.innerHTML = '<span style="font-family:monospace;color:#7d7a73;font-size:12px;letter-spacing:.1em">foto do produto</span>';
+    ph.style.background = 'repeating-linear-gradient(45deg,#16161a,#16161a 10px,#1c1c22 10px,#1c1c22 20px)';
+  }
+  var pg = document.getElementById('prodGrid');
+  produtos.forEach(function(pr){
+    var el = document.createElement('div');
+    el.className = 'pcard';
+    el.innerHTML = '<div class="ph"></div><div class="pb"><div class="tag">'+pr.tag+'</div><h3>'+pr.h+'</h3><p>'+pr.p+'</p></div>';
+    var ph = el.querySelector('.ph');
+    if(pr.img){
+      var im = document.createElement('img');
+      im.alt = pr.h; im.loading = 'lazy'; im.src = pr.img;
+      if(pr.fit === 'cover'){ im.style.objectFit = 'cover'; im.style.padding = '0'; im.style.background = 'none'; }
+      ph.appendChild(im);
+      guardImage(im, function(){ prodPlaceholder(ph); });
+    } else {
+      prodPlaceholder(ph);
+    }
+    el.style.cursor='pointer';
+    el.onclick=function(){window.open('https://api.whatsapp.com/send?phone=5511998581773&text='+encodeURIComponent('Olá Greta! Tenho interesse em: '+pr.h),'_blank');};
+    pg.appendChild(el);
+  });
+
+  // ---- Galeria de projetos (imagens reais ArtGrill) ----
+  var projetos = [
+    {img:"assets/proj-ilha-coifa.png", l:"Cozinha gourmet com ilha e coifa central"},
+    {img:"assets/proj-grill-bar.png", l:"Espaço gourmet com grill e adega integrada"},
+    {img:"assets/proj-grill-janela.png", l:"Churrasqueira elevatória com vista para o jardim"},
+    {img:"assets/proj-varanda-jardim.png", l:"Varanda gourmet integrada ao jardim"},
+    {img:"assets/proj-grill-coifa-preta.png", l:"Grill de embutir com coifa sob medida"},
+    {img:"assets/forno-pizza-invita.png", l:"Espaço gourmet com forno a lenha e churrasqueira"}
+  ];
+  var gg = document.getElementById('galGrid');
+  projetos.forEach(function(pj){
+    var a = document.createElement('a');
+    a.setAttribute('data-label', pj.l);
+    a.href = 'https://api.whatsapp.com/send?phone=5511998581773&text='+encodeURIComponent('Olá Greta! Gostei deste projeto: '+pj.l);
+    a.target = '_blank'; a.rel='noopener';
+    var im = document.createElement('img');
+    im.alt = pj.l; im.loading = 'lazy'; im.src = pj.img;
+    a.appendChild(im);
+    guardImage(im, function(){
+      im.style.display = 'none';
+      a.style.background = 'repeating-linear-gradient(45deg,#16161a,#16161a 10px,#1c1c22 10px,#1c1c22 20px)';
+      var lbl = document.createElement('span');
+      lbl.textContent = 'foto do projeto';
+      lbl.style.cssText = 'position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:monospace;color:#7d7a73;font-size:12px;letter-spacing:.1em';
+      a.appendChild(lbl);
+    });
+    gg.appendChild(a);
+  });
+
+  // ---- Formulário -> WhatsApp ----
+  function enviarOrcamento(e){
+    e.preventDefault();
+    var nome = document.getElementById('nome').value.trim();
+    var tel  = document.getElementById('tel').value.trim();
+    var tipo = document.getElementById('tipo').value;
+    var msg = 'Olá Greta! Meu nome é '+nome+'. Telefone: '+tel+'. Tenho interesse em: '+tipo+'. Gostaria de um orçamento sem compromisso.';
+    window.open('https://api.whatsapp.com/send?phone=5511998581773&text='+encodeURIComponent(msg),'_blank');
+    return false;
+  }
+</script>
+</body>
+</html>
